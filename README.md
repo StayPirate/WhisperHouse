@@ -6,11 +6,11 @@ WhisperHouse accomplishes this assuming each person constantly has a smartphone 
 It's possible to make others interesting things with it. WH is modular and relies on [probes](#probes) which record different informations into the database.
 
 WhisperHouse consists in *different pieces that could reside in different places*.
- 1 **NoSQL database** act to logs each input sent by probes, in this case i used [InfluxDB](https://github.com/influxdata/influxdb).
- 2 **Probes**, act to read values from sensors and constantly send it to the database. For instance:
+ 1. **NoSQL database** act to logs each input sent by probes, in this case i used [InfluxDB](https://github.com/influxdata/influxdb).
+ 2. **Probes**, act to read values from sensors and constantly send it to the database. For instance:
   * thermometer connected to the Raspberry PI's GPIO ([temperature](/temperature))
   * wifi-card which scans for macaddresses ([presence](/presence))
- 3 A tool to realize **charts** with data who comes from NoSQL database, in this case i used [Grafana](https://github.com/grafana/grafana).
+ 3. A tool to realize **charts** with data who comes from NoSQL database, in this case i used [Grafana](https://github.com/grafana/grafana).
 
 ## Tips for a good deployment
 
