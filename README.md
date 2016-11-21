@@ -24,18 +24,15 @@ I used [Certbot](https://github.com/certbot/certbot) to get certificate and [aut
 
 Probes are those *stand-alone components* who read data from a sensor and sends it via https to database.
 
+The [probes](/probes) directory contains all the probes and relative **docs**.
+To add a new probe you just have to write a program who reads data from a sensor, manages and sends it to database.
+
 For example I developed two probes for purposes that i needed.
 #### Context
 I live with some flatmates and i would like to know who is at home when i'm not, and cross those data with the temperature of the apartament. This helps me understand who uses  pump up radiators (up to absurd temperatures).
 
-I deployed those two probes into a RaspberryPI that we use as media center ([Kodi](https://kodi.tv)), so nobody get suspect for an always connected device with router.
+I deployed those two probes into a RaspberryPI that we use at home as media center ([Kodi](https://kodi.tv)), *the better place to hide something is putting it under the eyes of all*. In case someone checks connected devices on the router's admin panel, a media center doesn't get suspect if it's always connected. And more, the little thermomether sensor fits perfectly inside RaspberryPI's case.
 
-That's just in case someone often controls connected devices on the router's admin panel. And because *the better place to hide something is putting it under the eyes of all*. Plus the little thermomether sensor fits perfectly into RaspberryPI's case.
-
-A *genuine use* could be equity divide bills consider who was at home when the radiators were on. This could be automaticaly calculated by surveyed data.
+A *genuine use* could be equity divide bills tracking who was at home when the radiators were on. This could be automaticaly calculated by surveyed data.
 
 ---
-
-The [probes](/probes) directory contains all the probes and relative **docs**.
-
-To add a new probe you just have to write a program who reads data from a sensor, manages and sends it to database.
