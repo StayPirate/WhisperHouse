@@ -12,15 +12,7 @@ WhisperHouse consists in *different pieces that could reside in different places
   * wifi-card which scans for macaddresses ([presence](/presence))
  3. A tool to realize **charts** with data who comes from NoSQL database, in this case i used [Grafana](https://github.com/grafana/grafana).
 
-## Tips for a good deployment
-
-You should implement TLS certificates to secure connections from probes to InfluxDB's API, and for Grafana's web interface.
-Authentication between InfluxDB and probes acts through [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) which is sent in clear (just Base64 encoded) over HTTP headers.
-If you don't configure HTTPS connections, everybody could read credential for write into your database.
-
-I used [Certbot](https://github.com/certbot/certbot) to get certificate and [automatic regenerate it each 3 months](https://wiki.archlinux.org/index.php/Let%E2%80%99s_Encrypt#Automatic_renewal) from [Let’s Encrypt](https://letsencrypt.org) CA, and [Nginx](https://nginx.org) as reverse proxy.
-
-# Probes
+## Probes
 
 Probes are those *stand-alone components* who read data from a sensor and sends it via https to database.
 
@@ -28,7 +20,9 @@ The [probes](/probes) directory contains all the probes and relative **docs**.
 To add a new probe you just have to write a program who reads data from a sensor, manages and sends it to database.
 
 For example I developed two probes for purposes that i needed.
-#### Context
+
+---
+#### My Context
 I live with some flatmates and i would like to know who is at home when i'm not, and cross those data with the temperature of the apartament. This helps me understand who uses  pump up radiators (up to absurd temperatures).
 
 I deployed those two probes into a RaspberryPI that we use at home as media center ([Kodi](https://kodi.tv)), *the better place to hide something is putting it under the eyes of all*. In case someone checks connected devices on the router's admin panel, a media center doesn't get suspect if it's always connected. And more, the little thermomether sensor fits perfectly inside RaspberryPI's case.
@@ -36,3 +30,10 @@ I deployed those two probes into a RaspberryPI that we use at home as media cent
 A *genuine use* could be equity divide bills tracking who was at home when the radiators were on. This could be automaticaly calculated by surveyed data.
 
 ---
+## Tips for a good deployment
+
+You should implement TLS certificates to secure connections from probes to InfluxDB's API, and for Grafana's web interface.
+Authentication between InfluxDB and probes acts through [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) which is sent in clear (just Base64 encoded) over HTTP headers.
+If you don't configure HTTPS connections, everybody could read credential for write into your database.
+
+I used [Certbot](https://github.com/certbot/certbot) to get certificate and [automatic regenerate it each 3 months](https://wiki.archlinux.org/index.php/Let%E2%80%99s_Encrypt#Automatic_renewal) from [Let’s Encrypt](https://letsencrypt.org) CA, and [Nginx](https://nginx.org) as reverse proxy.
