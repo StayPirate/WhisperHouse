@@ -120,20 +120,14 @@ func main() {
 		log.Fatalln("Error: ", err)
 	}
 
-	/***** EXAMPLE *****
-
 	tags := map[string]string{
-		"cpu": "cpu-total",
-		"type": "intel",
+		"probe":  "rpi3",
+		"room":   "sala",
+		"sensor": "TMP102",
 	}
-
 	fields := map[string]interface{}{
-	    "idle":   10.1,
-	    "system": 53.3,
-	    "user":   46.6,
+		"value": 22.5,
 	}
-
-	********************/
 
 	p, err := client.NewPoint(
 		"temperature",

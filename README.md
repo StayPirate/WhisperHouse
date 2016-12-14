@@ -14,7 +14,7 @@ WhisperHouse consists in *different pieces that could reside in different places
 
 ## Probes
 
-Probes are those *stand-alone components* who read data from a sensor and sends it via https to database.
+Probes are *stand-alone components* who read data from a sensor and sends it via https to database.
 
 The [probes](/probes) directory contains all the probes and relative **docs**.
 To add a new probe you just have to write a program who reads data from a sensor, manages and sends it to database.
